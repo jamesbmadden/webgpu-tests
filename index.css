@@ -1,0 +1,34 @@
+/** Define variables */
+html {
+  --sidebar-size: 256px;
+}
+
+
+nav {
+  position: absolute;
+  top: 0;       left: 0;
+  height: 100%; width: var(--sidebar-size);
+  background: #133a24;
+  box-sizing: border-box;
+  padding: 1rem;
+  color: white;
+}
+nav h2 {
+  margin-top: 0;
+}
+li {
+  cursor: pointer;
+}
+
+main {
+  position: absolute;
+  top: 0;       right: 0;
+  height: 100%; width: calc(100% - var(--sidebar-size));
+}
+
+iframe {
+  position: absolute;
+  top: 0;       left: 0;
+  height: 100%; width: 100%;
+  border: none;
+}
