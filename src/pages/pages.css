@@ -1,0 +1,9 @@
+canvas {
+  width: 100%;
+  max-width: 720px;
+  margin: auto;
+  display: block;
+}
+.errorMsg {
+  background: #e3e3e3;
+}

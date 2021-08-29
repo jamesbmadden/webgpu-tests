@@ -41,4 +41,12 @@ async function main() {
         draw();
     });
 }
-main();
+if (navigator.gpu) {
+    main();
+}
+else {
+    const error = document.createElement('p');
+    error.className = 'errorMsg';
+    error.textContent = "It seems your browser doesn't support WebGPU. Make sure you're using the Nightly version of Firefox or the Canary version of Chrome or Edge and enable the WebGPU flag.";
+    document.body.replaceChild(error, canvas);
+}
