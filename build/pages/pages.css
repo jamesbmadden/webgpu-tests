@@ -7,3 +7,13 @@ canvas {
 .errorMsg {
   background: #e3e3e3;
 }
+
+
+.grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-2x2 > * {
+  width: 100%;
+}
