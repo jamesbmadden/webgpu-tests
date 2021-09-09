@@ -95,7 +95,7 @@ async function main () {
     const renderPass = commandEncoder.beginRenderPass({
       colorAttachments: [{
         view,
-        loadValue: { r: 0, g: 0, b: 0, a: 1 },
+        loadValue: 'load',
         storeOp: 'store'
       }]
     });
