@@ -9,7 +9,7 @@
   "author": "James Madden",
   "license": "MIT",
   "devDependencies": {
-    "@webgpu/types": "^0.1.6",
+    "@webgpu/types": "^0.1.21",
     "typescript": "^4.4.2"
   }
 }
