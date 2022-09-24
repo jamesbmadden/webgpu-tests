@@ -30,11 +30,12 @@ async function main() {
         const renderPass = commandEncoder.beginRenderPass({
             colorAttachments: [{
                     view,
-                    loadValue: { r: 0.0, g: 0.5, b: 1.0, a: 1.0 },
+                    clearValue: { r: 0.0, g: 0.5, b: 1.0, a: 1.0 },
+                    loadOp: 'clear',
                     storeOp: 'store'
                 }]
         });
-        renderPass.endPass();
+        renderPass.end();
         device.queue.submit([commandEncoder.finish()]);
     }
     requestAnimationFrame(() => {
