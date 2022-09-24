@@ -38,6 +38,7 @@ async function main() {
     new Float32Array(vertexBuf.getMappedRange()).set(vertices);
     vertexBuf.unmap();
     const pipeline = device.createRenderPipeline({
+        layout: 'auto',
         vertex: {
             module: shader,
             entryPoint: 'vs_main',
@@ -116,7 +117,8 @@ async function main() {
         const renderPass = commandEncoder.beginRenderPass({
             colorAttachments: [{
                     view,
-                    loadValue: { r: 0, g: 0, b: 0, a: 1 },
+                    clearValue: { r: 0, g: 0, b: 0, a: 1 },
+                    loadOp: 'clear',
                     storeOp: 'store'
                 }]
         });
@@ -124,7 +126,7 @@ async function main() {
         renderPass.setBindGroup(0, bindGroup);
         renderPass.setVertexBuffer(0, vertexBuf);
         renderPass.draw(6, 1);
-        renderPass.endPass();
+        renderPass.end();
         device.queue.submit([commandEncoder.finish()]);
     }
     // loading the texture, creating the bind group, etc will have to happen on every draw as the texture and size changes. 
