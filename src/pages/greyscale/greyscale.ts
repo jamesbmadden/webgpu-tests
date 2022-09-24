@@ -28,9 +28,9 @@ async function main () {
   if (surface === null) return;
 
   // get the ideal format
-  const format = surface.getPreferredFormat(adapter);
+  const format = navigator.gpu.getPreferredCanvasFormat();
   // and configure the surface (it'll be configured again later to set the size)
-  surface.configure({ device, format });
+  surface.configure({ device, format, alphaMode: 'opaque' });
 
   const shader = device.createShaderModule({ code: shaderSource });
 
@@ -86,7 +86,6 @@ async function main () {
     // make sure the canvas and surface matches the size of the image
     canvas.width = img.width;
     canvas.height = img.height;
-    surface.configure({ device, format, size: { width: img.width * devicePixelRatio, height: img.height * devicePixelRatio } });
 
     // create the texture
     let texture: GPUTexture;

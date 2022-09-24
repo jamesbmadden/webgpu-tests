@@ -24,10 +24,10 @@ async function main () {
   if (surface === null) return;
 
   // get the ideal format
-  const format = surface.getPreferredFormat(adapter);
+  const format = navigator.gpu.getPreferredCanvasFormat();
 
   // configure the surface (canvas) for the device
-  surface?.configure({ device, format });
+  surface?.configure({ device, format, alphaMode: 'premultiplied' });
 
   // create the shader module
   const shader = device.createShaderModule({
@@ -95,7 +95,7 @@ async function main () {
     const renderPass = commandEncoder.beginRenderPass({
       colorAttachments: [{
         view,
-        loadValue: 'load',
+        loadOp: 'load',
         storeOp: 'store'
       }]
     });
@@ -104,7 +104,7 @@ async function main () {
     renderPass.setPipeline(renderPipeline);
     renderPass.setVertexBuffer(0, vertexBuf);
     renderPass.draw(3, 1);
-    renderPass.endPass();
+    renderPass.end();
     device.queue.submit([commandEncoder.finish()]);
 
   }

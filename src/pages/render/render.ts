@@ -15,7 +15,8 @@ async function main () {
   // configure the surface (canvas context) to be able to draw from this device
   surface?.configure({
     device,
-    format: 'bgra8unorm'
+    format: 'bgra8unorm',
+    alphaMode: 'opaque'
   });
 
   // put the draw function inside the main function to allow use of scoped variables
