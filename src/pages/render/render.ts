@@ -34,7 +34,7 @@ async function main () {
     const renderPass = commandEncoder.beginRenderPass({
       colorAttachments: [{
         view,
-        clearValue: { r: 0.0, g: 0.5, b: 1.0, a: 1.0 },
+        clearValue: { r: 0.54, g: 0.72, b: 0.24, a: 1.0 },
         loadOp: 'clear',
         storeOp: 'store'
       }]
