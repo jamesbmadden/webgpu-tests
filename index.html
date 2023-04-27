@@ -7,11 +7,25 @@
   </head>
   <nav>
     <h2>WebGPU Tests</h2>
-    <li data-href="./build/pages/render/render.html">Paint</li>
-    <li data-href="./build/pages/triangle/triangle.html">Triangle</li>
-    <li data-href="./build/pages/greyscale/greyscale.html">Greyscale</li>
-    <li data-href="https://jamesbmadden.github.io/scratch-render-webgpu/playground/">Scratch Renderer</li>
-    <li data-href="https://jamesbmadden.github.io/emul8">CHIP-8 Emulator</li>
+    <ul class="webgpu-nav-items">
+      <li class="selected" data-href="./build/pages/render/render.html"><span>Paint</span></li>
+      <li data-href="./build/pages/triangle/triangle.html">
+        <img src="./assets/triangle.jpg" />
+        <span>Triangle</span>
+      </li>
+      <li data-href="./build/pages/greyscale/greyscale.html">
+        <img src="./assets/greyscale.jpg" />
+        <span>Greyscale</span>
+      </li>
+      <li data-href="https://jamesbmadden.github.io/scratch-render-webgpu/playground/">
+        <img src="./assets/scratch-renderer.jpg" />
+        <span>Scratch Renderer</span>
+      </li>
+      <li data-href="https://jamesbmadden.github.io/emul8">
+        <img src="./assets/emul8.jpg" />
+        <span>CHIP-8 Emulator</span>
+      </li>
+    </ul>
   </nav>
   <main>
     <iframe class="test" src="./build/pages/render/render.html"></iframe>

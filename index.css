@@ -1,6 +1,7 @@
 /** Define variables */
 html {
   --sidebar-size: 256px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 
@@ -8,7 +9,7 @@ nav {
   position: absolute;
   top: 0;       left: 0;
   height: 100%; width: var(--sidebar-size);
-  background: #133a24;
+  background: #445C1E;
   box-sizing: border-box;
   padding: 1rem;
   color: white;
@@ -18,6 +19,45 @@ nav h2 {
 }
 li {
   cursor: pointer;
+  width: 100%;
+  height: 128px;
+  background-color: #8BB83D80;
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+li img {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+li::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #445C1EC0;
+}
+li span {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  font-size: 1.5rem;
+  z-index: 1;
+}
+li.selected {
+  background: #8BB83D;
+}
+li.selected::after {
+  background: #8BB83DC0;
+}
+
+.webgpu-nav-items {
+  padding: 0;
+  list-style-type: none;
 }
 
 main {

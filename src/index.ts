@@ -9,6 +9,9 @@ document.querySelectorAll('li').forEach(link => {
   link.addEventListener('click', () => {
     // set the frame's src to the link's data-href attribute
     frame.src = link.getAttribute('data-href') || '';
+    // switch the active link
+    document.querySelector('.selected')?.classList.remove('selected');
+    link.classList.add('selected');
   });
 
 });
